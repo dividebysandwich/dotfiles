@@ -36,7 +36,7 @@ format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "net"
-format = " $icon {$signal_strength $ssid $frequency|Wired connection} via $device "
+format = " $icon {$signal_strength $ssid $frequency|Wired} $device "
 
 [[block]]
 block = "sound"
@@ -50,6 +50,7 @@ device = "DisplayDevice"
 driver = "upower"
 format = " 🔋 $percentage {$time |} "
 charging_format = " 🔌 $percentage {$time |} "
+full_format = "🔋 100% "
 
 [[block]]
 block = "time"
