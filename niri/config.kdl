@@ -5,8 +5,8 @@
 
 workspace "work"
 workspace "web"
-workspace "chat"
 workspace "steam"
+workspace "chat"
 workspace "game"
 
 hotkey-overlay {
@@ -372,7 +372,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^steam_app_$"#
+    match app-id=r#"^steam_app_.*"#
     open-on-workspace "game"
     open-maximized true
 }
