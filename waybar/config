@@ -3,8 +3,6 @@
 	"position": "top",
 
 	"modules-left": [
-//		"sway/mode",
-//		"sway/workspaces",
 		"custom/weather",
 		"custom/arrow10",
 		"custom/updater"
@@ -12,9 +10,8 @@
 
 	"modules-right": [
 		"custom/arrow9",
-		"bluetooth",
-		"custom/arrow8",
 		"pulseaudio",
+		"custom/arrow8",
 		"backlight",
 		"custom/arrow7",
 		"network",
@@ -139,7 +136,7 @@
 			"car": "",
 			"default": ["", ""]
 		},
-		"scroll-step": 1,
+		"scroll-step": 10,
 		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"on-click-right": "pavucontrol -t 3",
 		"tooltip": false
