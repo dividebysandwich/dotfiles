@@ -116,6 +116,16 @@ input {
 //    off
 //}
 
+output "HDMI-A-1" {
+    mode "3440x1440@99.982"
+//    mode "3440x1440@59.973"
+    focus-at-startup
+}
+
+output "eDP-1" {
+    variable-refresh-rate
+    focus-at-startup
+}
 
 
 // Settings that influence how windows are positioned and sized.
@@ -273,28 +283,29 @@ window-rule {
     clip-to-geometry true
 }
 
+// Make inactive windows semitransparent.
+//window-rule {
+//    match is-active=false
+//    opacity 0.95
+//}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "xwayland-satellite"
 environment {
     DISPLAY ":1"
 }
 
-spawn-at-startup "swww-daemon"
-spawn-at-startup "waybar"
+spawn-at-startup "/usr/bin/swww-daemon"
+spawn-at-startup "/usr/bin/waybar"
 
-spawn-at-startup "alacritty"
-spawn-at-startup "swaync"
-spawn-at-startup "ags"
-spawn-at-startup "nm-applet --indicator"
-spawn-at-startup "udiskie --appindicator -t"
-spawn-at-startup "steam"
-spawn-at-startup "telegram-desktop"
-spawn-at-startup "discord"
+spawn-at-startup "/usr/bin/steam"
+spawn-at-startup "/usr/bin/telegram-desktop"
+spawn-at-startup "/usr/bin/discord"
+spawn-at-startup "/usr/bin/udiskie -t"
 
 spawn-at-startup "niri msg action focus-workspace \"work\""
 
@@ -321,7 +332,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 0.5
 }
 
 // Window rules let you adjust behavior for individual windows.
